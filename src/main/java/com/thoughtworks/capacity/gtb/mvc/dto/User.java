@@ -12,6 +12,8 @@ import javax.validation.constraints.*;
 @NoArgsConstructor
 public class User {
 
+    private Integer id;
+
     @NotNull(message = "用户名不能为空")
     @Size(min = 3,max = 10,message = "用户名不合法")
 //    @Pattern(regexp = "^[0-9a-zA-Z_]{1,}$")

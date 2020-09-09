@@ -40,10 +40,11 @@ class UserControllerTest {
 
     @Test
     void shouldRegisterUserSuccess() throws Exception {
-        User user = new User(1,"M","123456","805560811@qq.com");
-        ObjectMapper objectMapper = new ObjectMapper();
-        String json = objectMapper.writeValueAsString(user);
-        mockMvc.perform(post("/register").content(json).contentType(MediaType.APPLICATION_JSON))
+        String jsonString = "{\"userName\": \"_1111\", \"password\": \"123456\", \"email\": \"805560811@qq.com\"}";
+//        User user = new User("M","888888","1@qq.com");
+//        ObjectMapper objectMapper = new ObjectMapper();
+//        String json = objectMapper.writeValueAsString(user);
+        mockMvc.perform(post("/register").content(jsonString).contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isCreated());
     }
 
